@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yv6sY9HzdtkVG1MCHRclEK5cNerB2JYXxZGjeSBK5EBaF0gC38ZJwtrR5YZ3/n27Cceg2Sy3Xat+41JA7SeU/Q==",
+  "dgSpecHash": "KFGSXZEqGTrJ/fsw+uwalRU3l26dCyvUHJXScwIreVSnJFPq+2c3tjhJDOkHz+hKJCcwPYdXBEDalt2AW1KRJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\hw1_4\\hw1_4\\hw1_4.fsproj",
+  "projectFilePath": "C:\\tasks\\programming-semestr4\\Hw1_4\\Hw1_4\\hw1_4.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\fsharp.core\\7.0.400\\fsharp.core.7.0.400.nupkg.sha512"
   ],

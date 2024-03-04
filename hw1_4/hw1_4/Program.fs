@@ -1,11 +1,18 @@
-﻿let rec factorial x = 
-    if x = 1 then 1 else x * factorial(x - 1)
+﻿let factorial n =
+    let rec helper n acc =
+        match n with
+        | 0 -> acc
+        | _ when n > 0 -> helper (n - 1) (n * acc)
+        | _ -> n
+    helper n 1
 
-
-let rec fibonacci x =
-    match x with
-    | 1 | 2 -> 1
-    | x -> fibonacci(x - 1) + fibonacci(x - 2)
+let fibonacci n =
+    let rec helper n a b =
+        match n with
+        | 0 -> a
+        | _ when n > 0 -> helper (n - 1) b (a + b)
+        | _ -> n
+    helper n 0 1
 
 let reversal list =
     let rec reversalT temp =
@@ -15,17 +22,22 @@ let reversal list =
 
     reversalT [] list
 
-let listPow n m =
-    List.unfold(fun (x, c) -> 
-    if c < 0 
-        then None 
-    else 
-        Some(x, (x * 2, c - 1))) (pown 2 n, m - n)
+let pow2 n =
+    let rec helper n acc =
+        match n with
+        | 0 -> acc
+        | _ -> helper (n-1) (acc * 2)
+    helper n 1
+
+let powList n m =
+    match n with
+        | _ when n >= 0 && m >= 0 -> [n..m] |> List.map (fun x -> pow2 x)
+        | _ -> []
 
 let rec findFirst (lst: int list) (num: int) =
-    let rec findHelper lst num index =
+    let rec helper lst num index =
         match lst with
         | [] -> None
         | head::tail when head = num -> Some index
-        | _::tail -> findHelper tail num (index + 1)
-    findHelper lst num 0
+        | _::tail -> helper tail num (index + 1)
+    helper lst num 0
