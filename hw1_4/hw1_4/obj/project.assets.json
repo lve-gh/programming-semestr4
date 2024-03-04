@@ -113,11 +113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\tasks\\programming-semestr4\\Hw1_4\\hw1_4\\hw1_4.fsproj",
-      "projectName": "hw1_4",
-      "projectPath": "C:\\tasks\\programming-semestr4\\Hw1_4\\hw1_4\\hw1_4.fsproj",
+      "projectUniqueName": "C:\\tasks\\programming-semestr4\\Hw1_4\\Hw1_4\\Hw1_4.fsproj",
+      "projectName": "Hw1_4",
+      "projectPath": "C:\\tasks\\programming-semestr4\\Hw1_4\\Hw1_4\\Hw1_4.fsproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\tasks\\programming-semestr4\\Hw1_4\\hw1_4\\obj\\",
+      "outputPath": "C:\\tasks\\programming-semestr4\\Hw1_4\\Hw1_4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
