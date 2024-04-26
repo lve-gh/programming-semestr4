@@ -16,22 +16,20 @@ let sumOfEvenFibonacci =
 printfn "%d" sumOfEvenFibonacci
 
 
-let multiplyString str n =
-    String.concat "" (Seq.init n (fun _ -> str))
+let drawFigure n =
+    let printRow row =
+        printfn "%s" row
 
+    let drawTopBottomRow n =
+        printRow (String.replicate n "*")
 
-let printSquare n =
-    let rec printLine i = 
-        if i = 0 then printfn "" 
-        else 
-            if i = 1 || i = n then printf "*" 
-            else printf " " 
-            printLine (i - 1)
-    
-    for line in 1 .. n do
-        printLine n 
+    let drawMiddleRow n =
+        printRow ("*" + String.replicate (n-2) " " + "*")
 
-
+    drawTopBottomRow n
+    for _ in 1..(n-2) do
+        drawMiddleRow n
+    drawTopBottomRow n
 
 type PriorityItem<'T> = 
     { Value: 'T
