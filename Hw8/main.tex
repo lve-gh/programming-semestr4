@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+
+\begin{document}
+
+Grammar \\
+\\
+(letters) ::= 0 | ... | 9 \\
+(numbers) ::= A \;|\; ... \;|\; Z \;|\; a \;|\; ... z \\
+(var) ::= (letters) (letters | var) \\
+(term') ::= (var) | (term) \\
+(term) :: = (application) | (termR) \\
+(application) ::= (term') (term') | (term') (application) \\
+(vars) ::= (var) | (var) (vars) \\
+(abstraction) ::= \textbackslash (vars) . (term) \\
+
+Example \\
+\\
+let F =  \textbackslash x y.x \\
+let (var) = (term) \\
+let (letter) = (term) \\
+let F = (term) \\
+let F = (abstraction) \\
+let F = \textbackslash (vars) . (term) \\
+let F = \textbackslash (var) (vars) . (term) \\
+let F = \textbackslash (letters) (vars) . (term) \\
+let F = \textbackslash x (vars) . (term) \\
+let F = \textbackslash x (var) . (term) \\
+let F = \textbackslash x (letters) . (term) \\
+let F = \textbackslash x y . (term) \\
+let F = \textbackslash x y . (var) \\
+let F = \textbackslash x y . (letters) \\
+let F =  \textbackslash x y . x \\
+\end{document}

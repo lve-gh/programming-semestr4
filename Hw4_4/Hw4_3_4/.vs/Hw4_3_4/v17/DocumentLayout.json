@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Hw4_3_4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{793BF77D-A4ED-4B7B-B27E-37C525E1F6DE}|Hw4_3_4.tests\\Hw4_3_4.tests.fsproj|c:\\users\\user\\source\\repos\\hw4_3_4\\hw4_3_4.tests\\testmenu.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{793BF77D-A4ED-4B7B-B27E-37C525E1F6DE}|Hw4_3_4.tests\\Hw4_3_4.tests.fsproj|solutionrelative:hw4_3_4.tests\\testmenu.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B217E7-24F5-4196-815B-F820F2A8F6DD}|Hw4_3_4\\Hw4_3_4.fsproj|c:\\users\\user\\source\\repos\\hw4_3_4\\hw4_3_4\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{A7B217E7-24F5-4196-815B-F820F2A8F6DD}|Hw4_3_4\\Hw4_3_4.fsproj|solutionrelative:hw4_3_4\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestMenu.fs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hw4_3_4\\Hw4_3_4.tests\\TestMenu.fs",
+              "RelativeDocumentMoniker": "Hw4_3_4.tests\\TestMenu.fs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hw4_3_4\\Hw4_3_4.tests\\TestMenu.fs",
+              "RelativeToolTip": "Hw4_3_4.tests\\TestMenu.fs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-03T17:05:24.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.fs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hw4_3_4\\Hw4_3_4\\Program.fs",
+              "RelativeDocumentMoniker": "Hw4_3_4\\Program.fs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hw4_3_4\\Hw4_3_4\\Program.fs",
+              "RelativeToolTip": "Hw4_3_4\\Program.fs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-03T16:37:06.882Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

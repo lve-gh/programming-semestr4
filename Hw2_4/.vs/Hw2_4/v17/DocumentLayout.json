@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\tasks\\programming-semestr4\\Hw2_4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6B7848F6-3C45-4B75-BE86-A2F62F68AF62}|Hw2_4\\Hw2_4.fsproj|c:\\tasks\\programming-semestr4\\hw2_4\\hw2_4\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{6B7848F6-3C45-4B75-BE86-A2F62F68AF62}|Hw2_4\\Hw2_4.fsproj|solutionrelative:hw2_4\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C81806-152D-428F-856F-09BA74C5B8D2}|Program.tests\\Program.tests.fsproj|c:\\tasks\\programming-semestr4\\hw2_4\\program.tests\\unittest1.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{E4C81806-152D-428F-856F-09BA74C5B8D2}|Program.tests\\Program.tests.fsproj|solutionrelative:program.tests\\unittest1.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4C81806-152D-428F-856F-09BA74C5B8D2}|Program.tests\\Program.tests.fsproj|c:\\tasks\\programming-semestr4\\hw2_4\\program.tests\\program.tests.fsproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E4C81806-152D-428F-856F-09BA74C5B8D2}|Program.tests\\Program.tests.fsproj|solutionrelative:program.tests\\program.tests.fsproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.tests.fsproj",
+              "DocumentMoniker": "C:\\tasks\\programming-semestr4\\Hw2_4\\Program.tests\\Program.tests.fsproj",
+              "RelativeDocumentMoniker": "Program.tests\\Program.tests.fsproj",
+              "ToolTip": "C:\\tasks\\programming-semestr4\\Hw2_4\\Program.tests\\Program.tests.fsproj",
+              "RelativeToolTip": "Program.tests\\Program.tests.fsproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001351|",
+              "WhenOpened": "2024-04-19T20:08:24.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.fs",
+              "DocumentMoniker": "C:\\tasks\\programming-semestr4\\Hw2_4\\Program.tests\\UnitTest1.fs",
+              "RelativeDocumentMoniker": "Program.tests\\UnitTest1.fs",
+              "ToolTip": "C:\\tasks\\programming-semestr4\\Hw2_4\\Program.tests\\UnitTest1.fs",
+              "RelativeToolTip": "Program.tests\\UnitTest1.fs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-19T20:08:24.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.fs",
+              "DocumentMoniker": "C:\\tasks\\programming-semestr4\\Hw2_4\\Hw2_4\\Program.fs",
+              "RelativeDocumentMoniker": "Hw2_4\\Program.fs",
+              "ToolTip": "C:\\tasks\\programming-semestr4\\Hw2_4\\Hw2_4\\Program.fs",
+              "RelativeToolTip": "Hw2_4\\Program.fs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-19T20:08:24.404Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
