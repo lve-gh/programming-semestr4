@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
+\usepackage[russian]{babel}
 
 \date{}
 
@@ -7,8 +8,17 @@
 
 \maketitle
 
+$$
+((\lambda a.(\lambda b.b b) (\lambda b.b b)) b) ((\lambda c.(c b)) (\lambda a.a)) = \\ 
+$$
 
-\section{((La.(Lb.b b) (Lb.b b)) b) ((Lc.(c b)) (La.a)) =  ((Lb.b b) (Lb.b b))) ((Lc.(c b)) (La.a)) = ((Lb.b b) (Lb.b b))) ((Lc.(c b)) (La.a)) = ...}
+$$
+= ((\lambda b.b b) (\lambda b.b b))) ((\lambda c.(c b)) (\lambda a.a)) = \\
+$$
 
-\section{The third type of our terma is no different from the second. Consequently, it is no longer possible to transform it. Since the term has redexes, it is not reduced to normal form.}
+$$
+= ((\lambda b.b b) (\lambda b.b b))) ((\lambda c.(c b)) (\lambda a.a)) = ...
+$$
+Третий тип нашего терма ничем не отличается от второго. Следовательно, изменить его уже невозможно. Тогда, по теореме Карри о нормализации он не приводится к нормальной форме.
+
 \end{document}
