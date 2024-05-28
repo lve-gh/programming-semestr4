@@ -14,6 +14,15 @@ let ``Round the number`` () =
     }
     result |> should equal 0.048
 
+[<Test>]
+let ``Round another number`` () =
+    let rounding = WorkflowRound
+    let result = rounding 2 {
+        let! a = 3.0 / 8.0
+        let! b = 4.7
+        return a / b 
+    }
+    result |> should equal 0.08
 
 [<Test>]
 let ``Calculate numbers`` () =

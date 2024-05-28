@@ -3,7 +3,7 @@
 open System
 
 type WorkflowRound(accuracy : int) =
-    member this.Bind (x : float, f) = f x
+    member this.Bind (x : float, f) = f (Math.Round(x, accuracy))
     member this.Return (x : float) = Math.Round(x, accuracy)
 
 type WorkflowStrings() =

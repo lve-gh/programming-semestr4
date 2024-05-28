@@ -113,11 +113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4\\Hw6_4.fsproj",
+      "projectUniqueName": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4\\Hw6_4.fsproj",
       "projectName": "Hw6_4",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4\\Hw6_4.fsproj",
+      "projectPath": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4\\Hw6_4.fsproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4\\obj\\",
+      "outputPath": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,7 +128,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\8.0.203\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.204\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -170,7 +170,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

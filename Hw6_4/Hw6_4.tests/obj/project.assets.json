@@ -973,11 +973,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4.tests\\Hw6_4.tests.fsproj",
+      "projectUniqueName": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4.tests\\Hw6_4.tests.fsproj",
       "projectName": "Hw6_4.tests",
-      "projectPath": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4.tests\\Hw6_4.tests.fsproj",
+      "projectPath": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4.tests\\Hw6_4.tests.fsproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4.tests\\obj\\",
+      "outputPath": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4.tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -988,15 +988,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\8.0.203\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.204\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4\\Hw6_4.fsproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\Hw6_4\\Hw6_4\\Hw6_4.fsproj"
+            "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4\\Hw6_4.fsproj": {
+              "projectPath": "C:\\tasks\\programming-semestr4\\Hw6_4\\Hw6_4\\Hw6_4.fsproj"
             }
           }
         }
@@ -1064,7 +1064,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
