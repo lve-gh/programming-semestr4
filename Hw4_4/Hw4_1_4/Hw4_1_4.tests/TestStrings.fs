@@ -11,3 +11,13 @@ open NUnit.Framework
      let ``IncorrectTest``() =
             let check = isValid "[(]"
             Assert.AreEqual(check, false)
+
+[<Test>]
+      let ``EmplyStringTest``() =
+            let check = isValid ""
+            Assert.AreEqual(check, false)
+
+[<Test>]
+       let ``OneVraceTest``() =
+             let check = isValid ")"
+             Assert.AreEqual(check, false)

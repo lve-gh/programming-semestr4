@@ -2,30 +2,30 @@
 
 open System.Collections.Generic
 
-let isValid (input: string) =
-    let mutable isValid = true
-    let stack = Stack<char>()
-    let isOpening c = c = '{' || c = '[' || c = '('
-    let isClosing c = c = '}' || c = ']' || c = ')'
-    let isMatchingOpening c closing =
-        match closing with
-        | '}' -> c = '{'
-        | ']' -> c = '['
-        | ')' -> c = '('
-        | _ -> false
+let isValid (sequence: string) =
+    let openingBrackets = ['{'; '['; '(']
+    let closingBrackets = ['}'; ']'; ')']
+    
 
-    for c in input do
-        if isOpening c then
-            stack.Push(c)
-        elif isClosing c then
-            match stack.TryPeek() with
-            | true, top when isMatchingOpening top c -> stack.Pop() |> ignore
-            | _ -> isValid <- false
+    let rec checkStack stack remaining =
+        match remaining with
+        | [] -> List.isEmpty stack
+        | char :: tail ->
+            if List.contains char openingBrackets then
+                checkStack (char :: stack) tail
+            elif List.contains char closingBrackets then
+                match stack with
+                | [] -> false
+                | openingBracket :: stackTail ->
+                    if List.findIndex ((=) openingBracket) openingBrackets = List.findIndex ((=) char) closingBrackets then
+                        checkStack stackTail tail
+                    else
+                        false
+            else
+                checkStack stack tail
 
-    isValid && stack.Count = 0
+    match sequence with 
+    | "" -> false
+    | _ -> checkStack [] (List.ofSeq sequence)
 
-let string = "()]"
-
-let a = isValid string
-
-printf "%b" a
+//printfn "%b" (checkBrackets "{}")  
