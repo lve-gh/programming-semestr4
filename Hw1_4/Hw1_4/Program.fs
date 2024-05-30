@@ -26,17 +26,13 @@ let reversal list =
 
     reversalT [] list
 
-let pow2 n = 
-    let rec helper n acc =
-        match n with
-        | 0 -> acc
-        | _ -> helper (n - 1) (acc * 2)
-    helper n 1
+let powList n m =
+    let max = int (2.0 ** int (n + m))
+    let rec find ls el i =
+        if i = 0 then ls
+        else find (el :: ls) (el / 2) (i - 1)
 
-let powList n m = // :(
-    match n with
-        | _ when n >= 0 && m >= 0 -> [n..m] |> List.map (fun x -> pow2 x)
-        | _ -> []
+    find [] max (m + 1)
 
 let rec findFirst (lst: int list) (num: int) =
     let rec helper lst num index =
