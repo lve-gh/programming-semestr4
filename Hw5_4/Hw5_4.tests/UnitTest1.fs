@@ -3,24 +3,21 @@ module NetworkSimulationTests
 open NUnit.Framework
 open NetworkSimulation
 
-//let createTestNetwork () =
-//    let matrix = [| [|true; true; true|]; [|true; true; true|]; [|true; true; true|] |]
-//    let probabilities = Map.ofList [ OS.Windows, 1.0; OS.Linux, 0.0 ]
-//    Network(matrix, probabilities)
-
 [<Test>]
-let ``Check the simulation`` () =
+let ``Check all infected`` () =
     let matrix = [| [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|] |]
-    let probabilities = Map.ofList [ OS.Windows, 1.0; OS.Linux, 1.0 ; OS.MacOS, 1.0]
-    let network = Network(matrix, probabilities, 1, 2, 1)
+    let network = Network(matrix, 1, 2, 1, 1.0, 1.0, 1.0)
     network.RunSimulation()
-    let areAllInfected = network.areAllComputersInfected
+    let convertToBool (f : unit -> bool) : bool = f ()
+    let areAllInfected = convertToBool network.areAllComputersInfected
+
     Assert.AreEqual(areAllInfected , true)
 
-
-//[<Test>]
-//let ``Check the Network`` () =
-//    let matrix = [| [|false; true; false|]; [|true; false; true|]; [|false; true; false|] |]
-//    let probabilities = Map.ofList [ OS.Windows, 1.0; OS.Linux, 0.0 ]
-//    let network = createTestNetwork ()
-//    Assert.AreEqual(Network(matrix, probabilities), network)
+[<Test>]
+let ``Check all is not infected`` () =
+    let matrix = [| [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|] |]
+    let network = Network(matrix, 1, 2, 1, 0.0, 0.0, 0.0)
+    network.RunSimulation()
+    let convertToBool (f : unit -> bool) : bool = f ()
+    let areAllInfected = convertToBool network.areAllComputersInfected
+    Assert.AreEqual(areAllInfected , false)
