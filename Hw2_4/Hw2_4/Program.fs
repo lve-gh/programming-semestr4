@@ -27,21 +27,23 @@ module Tree =
 
 
 // 3
+type BinaryExpr = 
+    | Add 
+    | Mul 
+    | Sub 
+    | Div 
+
 type Expr =
     | Const of int
-    | Add of Expr * Expr
-    | Mul of Expr * Expr
-    | Sub of Expr * Expr
-    | Div of Expr * Expr
+    | Binary of BinaryExpr * Expr * Expr
 
 let rec eval expr =
     match expr with
     | Const c -> c
-    | Add (e1, e2) -> eval e1 + eval e2
-    | Mul (e1, e2) -> eval e1 * eval e2
-    | Sub (e1, e2) -> eval e1 - eval e2
-    | Div (e1, e2) -> eval e1 / eval e2
-
+    | Binary (Add, e1, e2) -> eval e1 + eval e2
+    | Binary (Mul, e1, e2) -> eval e1 * eval e2
+    | Binary (Sub, e1, e2) -> eval e1 - eval e2
+    | Binary (Div, e1, e2) -> eval e1 / eval e2
 
 // 4
 let rec isPrime n =
