@@ -14,6 +14,7 @@ let printLinksInfo (links: Async<(string * int)> list) =
 let downloadAndPrintLinksInfo (url: string) =
     let httpClient = new HttpClient()
     async {
+        try
         let! html = httpClient.GetStringAsync(url) |> Async.AwaitTask
 
         let regex = new Regex(@"<a\s+href=""(http[^""]*)""", RegexOptions.Compiled)
@@ -30,6 +31,9 @@ let downloadAndPrintLinksInfo (url: string) =
             }
         let downloadTasks = [ for match_v in matches -> downloadPage match_v ]
         return downloadTasks
+        with _ ->
+            let errorList : Async<(string * int)> list = [ async { return ("error", -1) } ]
+            return errorList
     }
 let a = downloadAndPrintLinksInfo "https://github.com/lve-gh/" |> Async.RunSynchronously
 printLinksInfo a
