@@ -11,8 +11,14 @@ type Computer(os: OS, isInfected: bool) =
     member val OS = os
     member val IsInfected = isInfected
 
-type Network(adjacencyMatrix: bool[][], infectionProbabilities: Map<OS, float>) =
-    let computers = Array.init adjacencyMatrix.Length (fun i -> Computer(OS.Windows, false)) 
+let ComputersInNetworks(windows: int, linux: int, macOS: int) =
+    let windowsComputers = Array.init windows (fun i -> Computer(OS.Windows, false))
+    let linuxComputers = Array.init linux (fun i -> Computer(OS.Linux, false))
+    let macOSComputers = Array.init macOS (fun i ->  Computer(OS.MacOS, false))
+    Array.concat [windowsComputers ; linuxComputers ; macOSComputers]
+
+type Network(adjacencyMatrix: bool[][], infectionProbabilities: Map<OS, float>, winCount: int, linuxCount: int, macCount: int) =
+    let computers = ComputersInNetworks(winCount, linuxCount, macCount) 
     let random = Random()
 
     let isConnected (computer1: int) (computer2: int) = adjacencyMatrix.[computer1].[computer2]
@@ -24,21 +30,27 @@ type Network(adjacencyMatrix: bool[][], infectionProbabilities: Map<OS, float>) 
 
     let infectComputer (computerIndex: int) =
         let computer = computers.[computerIndex]
+        let t = getInfectionProbability computer
         if not computer.IsInfected && random.NextDouble() < getInfectionProbability computer then
-            computers.[computerIndex] <- Computer(computer.OS, true)
+            let infectedComputer = Computer(computer.OS, true)
+            computers.[computerIndex] <- infectedComputer
             printfn "Computer %d is infected!" computerIndex
+            infectedComputer
+        else
+            computer
 
     let simulateStep () =
         let infectedComputers = 
             computers 
-            |> Array.mapi (fun i (computer: Computer) -> if computer.IsInfected then Some i else None)
+            |> Array.mapi (fun i (computer: Computer) -> if computer.IsInfected then None else Some i)
         infectedComputers
         |> Array.choose id
-        |> Array.iter (fun infectedIndex ->
-            adjacencyMatrix.[infectedIndex]
+        |> Array.filter (fun infectedIndex -> infectedIndex < adjacencyMatrix.Length)
+        |> Array.map (fun infectedIndex ->
+            adjacencyMatrix[infectedIndex]
             |> Array.mapi (fun j isConnected -> if isConnected then Some j else None)
             |> Array.choose id
-            |> Array.iter infectComputer)
+            |> Array.map infectComputer)   
 
     let printNetworkState () =
         printfn "Network state:"
@@ -46,6 +58,15 @@ type Network(adjacencyMatrix: bool[][], infectionProbabilities: Map<OS, float>) 
 
     member this.RunSimulation () =
         while Array.exists (fun (computer: Computer) -> not computer.IsInfected) computers do
-            simulateStep ()
+            let a = simulateStep ()
             printNetworkState ()
             printfn "-------------------------"
+
+let random1 = Random()
+printfn "%f" (random1.NextDouble()) 
+
+
+let matrix = [| [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|] |]
+let probabilities = Map.ofList [ OS.Windows, 0.1; OS.Linux, 0.1 ; OS.MacOS, 0.1]
+let network = Network(matrix, probabilities, 1, 2, 1)
+network.RunSimulation()
