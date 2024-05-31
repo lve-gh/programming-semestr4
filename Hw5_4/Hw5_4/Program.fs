@@ -34,7 +34,7 @@ type Network(adjacencyMatrix: bool[][], infectionProbabilities: Map<OS, float>, 
         if not computer.IsInfected && random.NextDouble() < getInfectionProbability computer then
             let infectedComputer = Computer(computer.OS, true)
             computers.[computerIndex] <- infectedComputer
-            printfn "Computer %d is infected!" computerIndex
+            //printfn "Computer %d is infected!" computerIndex
             infectedComputer
         else
             computer
@@ -52,21 +52,34 @@ type Network(adjacencyMatrix: bool[][], infectionProbabilities: Map<OS, float>, 
             |> Array.choose id
             |> Array.map infectComputer)   
 
-    let printNetworkState () =
-        printfn "Network state:"
-        computers |> Array.iteri (fun i computer -> printfn "Computer %d (%A): %s" i computer.OS (if computer.IsInfected then "Infected" else "Healthy"))
+    //let printNetworkState () =
+    //    printfn "Network state:"
+    //    computers |> Array.iteri (fun i computer -> printfn "Computer %d (%A): %s" i computer.OS (if computer.IsInfected then "Infected" else "Healthy"))
+
+    member this.getComputers() =
+        computers
+
+    member this.areAllComputersInfected() : bool =
+        computers |> Array.forall (fun computer -> computer.IsInfected)
 
     member this.RunSimulation () =
         while Array.exists (fun (computer: Computer) -> not computer.IsInfected) computers do
             let a = simulateStep ()
-            printNetworkState ()
-            printfn "-------------------------"
+            a |> ignore
+            //None
+            //expr |> ignore 
+            //printfn ""
+            //printNetworkState ()
+            //printfn "-------------------------"
+
 
 let random1 = Random()
-printfn "%f" (random1.NextDouble()) 
 
 
 let matrix = [| [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|]; [|true; true; true; true|] |]
 let probabilities = Map.ofList [ OS.Windows, 0.1; OS.Linux, 0.1 ; OS.MacOS, 0.1]
 let network = Network(matrix, probabilities, 1, 2, 1)
 network.RunSimulation()
+
+let allComputersInfected = network.areAllComputersInfected()
+//printfn "Are all computers infected? %b" allComputersInfected
