@@ -4,13 +4,12 @@ open System
 open System.Text.RegularExpressions
 open System.Net.Http
 
+let printLinksInfo (links: Async<(string * int)> list) =
+    links |> List.iter (fun link -> 
+        Async.RunSynchronously link
+        |> fun (url, length) -> printfn "%s %d" url length
+    )
 
-let printAsyncList (asyncList: Async<string> list) =
-    async {
-        for asyncString in asyncList do
-            let! str = asyncString
-            printfn "%s" str
-    }
 
 let downloadAndPrintLinksInfo (url: string) =
     let httpClient = new HttpClient()
@@ -22,14 +21,16 @@ let downloadAndPrintLinksInfo (url: string) =
 
         let downloadPage (link: Match) =
             async {
-                let linkUrl = link.Groups.[1].Value
-                let! pageContent = httpClient.GetStringAsync(Uri(linkUrl)) |> Async.AwaitTask
-                return linkUrl + " " + pageContent.Length.ToString()
+                try
+                    let linkUrl = link.Groups.[1].Value
+                    let! pageContent = httpClient.GetStringAsync(Uri(linkUrl)) |> Async.AwaitTask
+                    return (linkUrl, pageContent.Length)
+                with _ ->
+                    return ("error", -1)
             }
         let downloadTasks = [ for match_v in matches -> downloadPage match_v ]
         return downloadTasks
     }
 let a = downloadAndPrintLinksInfo "https://github.com/lve-gh/" |> Async.RunSynchronously
-//printfn "%s" a[0]
-printAsyncList a |> Async.RunSynchronously
+printLinksInfo a
 
