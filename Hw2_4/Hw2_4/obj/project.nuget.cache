@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2IwcniM9Hd8Vr5lh/t/4pVD1DPU5HuLZccMV6iO79NLdVJmHl2ktG4T2f61mLWzuUN+0+EUwblJ4Gg0zS90/Sw==",
+  "success": true,
+  "projectFilePath": "C:\\tasks\\programming-semestr4\\Hw2_4\\Hw2_4\\Hw2_4.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
+  ],
+  "logs": []
+}

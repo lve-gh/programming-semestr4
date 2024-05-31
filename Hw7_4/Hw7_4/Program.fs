@@ -17,12 +17,25 @@ type SimpleLazy<'a>(supplier: unit -> 'a) =
             value
 
 type ThreadSafeLazy<'a>(supplier: unit -> 'a) =
-    let value = Lazy.Create supplier
+    let mutable value : 'a option = None
+    let gate = obj()
     interface ILazy<'a> with
-        member this.Get() = value.Value
+        member this.Get() =
+            match value with
+            | Some v -> v
+            | None ->
+                lock gate (fun () ->
+                    match value with
+                    | Some v -> v
+                    | None ->
+                        let v = supplier()
+                        value <- Some v
+                        v
+                )
+
 
 type LockFreeLazy<'a>(supplier : unit -> 'a) =
-    let mutable privateSupplier : unit -> 'a = supplier
+    let privateSupplier : unit -> 'a = supplier
     let mutable result : Option<'a> = None
     interface ILazy<'a> with
         member this.Get () =
@@ -32,3 +45,10 @@ type LockFreeLazy<'a>(supplier : unit -> 'a) =
                 Interlocked.CompareExchange(&result, Some value, None) |> ignore
                 result.Value
             | Some value -> value
+
+
+let lazyValue = LockFreeLazy<int>(fun () -> 1 + 2 + 3)
+
+let value = (lazyValue :> ILazy<int>).Get()
+printf "%d" value
+

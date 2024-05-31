@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\tasks\\programming-semestr4\\Hw1_4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C71F69C-40B3-420C-B70E-9E638EADC9C3}|Hw1_4\\Hw1_4.fsproj|c:\\tasks\\programming-semestr4\\hw1_4\\hw1_4\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{5C71F69C-40B3-420C-B70E-9E638EADC9C3}|Hw1_4\\Hw1_4.fsproj|solutionrelative:hw1_4\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.fs",
+              "DocumentMoniker": "C:\\tasks\\programming-semestr4\\Hw1_4\\Hw1_4\\Program.fs",
+              "RelativeDocumentMoniker": "Hw1_4\\Program.fs",
+              "ToolTip": "C:\\tasks\\programming-semestr4\\Hw1_4\\Hw1_4\\Program.fs",
+              "RelativeToolTip": "Hw1_4\\Program.fs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-07T14:06:34.484Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
