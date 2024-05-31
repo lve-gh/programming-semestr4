@@ -35,13 +35,13 @@ type ThreadSafeLazy<'a>(supplier: unit -> 'a) =
 
 
 type LockFreeLazy<'a>(supplier : unit -> 'a) =
-    let privateSupplier : unit -> 'a = supplier
+    //let privateSupplier : unit -> 'a = supplier
     let mutable result : Option<'a> = None
     interface ILazy<'a> with
         member this.Get () =
             match result with
             | None ->
-                let value = privateSupplier ()
+                let value = supplier()
                 Interlocked.CompareExchange(&result, Some value, None) |> ignore
                 result.Value
             | Some value -> value
